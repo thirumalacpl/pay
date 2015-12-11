@@ -1,0 +1,65 @@
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.advs.manhummel.lpa" version="1.1.0">
+	<supports-screens android:anyDensity="true" android:resizeable="true" 
+	android:smallScreens="true" 
+	android:normalScreens="true" 
+	android:largeScreens="true" 
+	android:xlargeScreens="true" />
+
+  <name>WATCHGUARD_camera</name>
+  <description>WATCHGUARD_camera</description>
+  <author href="http://advicesync.com" email="support@advicesync.com">eImpressive</author>
+  <content src="index.html"/>
+
+<uses-permission android:name="android.permission.CAMERA"/> 
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+ <uses-permission android:name="android.permission.INTERNET">
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+<uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+<uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>  
+<uses-permission android:name="android.permission.WAKE_LOCK"/>  
+<uses-permission android:name="android.permission.GET_ACCOUNTS"/>  
+<uses-permission android:name="android.permission.USE_CREDENTIALS"/>  
+
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+<!-- for card.io card scanning -->
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.VIBRATE" />
+
+<!-- for most things, including card.io and paypal -->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+
+<!-- Camera features -->
+<uses-feature android:name="android.hardware.camera" android:required="false" />
+<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+<uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+
+<service android:name="com.paypal.android.sdk.payments.PayPalService" android:exported="false" />
+<activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+<activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+<activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+<activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+
+<activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+<activity android:name="io.card.payment.DataEntryActivity" />
+
+<gap:config-file platform="android" parent="/manifest">
+	<supports-screens 
+        android:xlargeScreens="false" 
+        android:largeScreens="false" 
+        android:smallScreens="false" />
+        <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+</gap:config-file>
+
+ </widget>
